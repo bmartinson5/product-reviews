@@ -1,0 +1,18 @@
+<h1>The Division of <%= @division.name %></h1>
+
+<% if @division.employees.any? %>
+  <h3>Current employees</h3>
+  <ul>
+    <% @division.employees.each do |employee| %>
+      <li>
+        <%= link_to employee.name, division_employee_path(division_id: @division.id, id: employee.id) %><br>
+        <%= link_to "Remove from company", division_employee_path(division_id: @division.id, id: employee.id), method: :delete %><br><br>
+      </li>
+    <% end %>
+    </ul>
+<%else %>
+  <p>There are no employees here.</p>
+<%end%>
+
+<%= link_to "Add a new employee to the Division", new_division_employee_path(division_id: @division.id) %>
+<p><%= link_to "Back to the home page", divisions_path %></p>

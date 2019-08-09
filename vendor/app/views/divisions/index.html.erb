@@ -1,0 +1,51 @@
+<h1>Union Buster Co</h1>
+
+
+<% if @divisions.any? %>
+  <h3>Company Divisions:</h3>
+  <ul>
+    <% @divisions.each do |division| %>
+      <div>
+        <li><%=link_to division.name, division_path(division.id) %></li>
+      </div>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No Divisions created yet.</p>
+<% end %>
+
+<% if @projects.any? %>
+  <h3>Company Projects:</h3>
+  <ul>
+    <% @projects.each do |project| %>
+      <div class="divisionIndexProjects">
+        <li><%=link_to project.name, project_path(project.id) %></li>
+      </div>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No Projects created yet.</p>
+<% end %>
+
+<% if @employees.any? %>
+  <h3>Company Employees:</h3>
+  <form class="" action="/divisions" method="get">
+    <input type="text" name="search_name" placeholder="Enter a name">
+    <button type="submit" name="button">Search</button>
+  </form>
+
+  <ul>
+    <% @employees.each do |employee| %>
+      <div class="divisionIndexEmployees">
+        <li><%=link_to employee.name, division_employee_path(division_id: employee.division_id, id: employee.id) %></li>
+      </div>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No Employees created yet.</p>
+<% end %>
+
+
+
+<p><%= link_to "Create a company project", new_project_path() %></p>
+<p><%= link_to "Create a division in the company", new_division_path() %></p>

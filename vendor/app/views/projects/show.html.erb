@@ -1,0 +1,17 @@
+<h1>Project: <%= @project.name %></h1>
+
+<% if @project.employees.any? %>
+  <h3>Employees assigned to the project:</h3>
+  <ul>
+    <% @project.employees.each do |employee| %>
+      <li>
+        <%= link_to employee.name, division_employee_path(division_id: employee.division_id, id: employee.id) %><br>
+        <%= link_to "Remove from Project", employee_project_path(employee_id: employee.id, project_id: @project.id), method: :delete %><br><br>
+      </li>
+    <% end %>
+    </ul>
+<%else %>
+  <p>There are no employees assigned to this project yet.</p>
+<%end%>
+
+<p><%= link_to "Back to the home page", divisions_path %></p>

@@ -1,0 +1,19 @@
+<h2>Employee name: <%= @employee.name %></h2>
+
+<h4>Current Division: <%= Division.find(@employee.division_id).name %></h4>
+<% if @employee.projects.any? %>
+  Assigned Projects:
+  <ul>
+    <% @employee.projects.each do |project| %>
+      <li> <%= link_to project.name, project_path(project.id) %></li>
+    <% end %>
+    </ul>
+<%else %>
+  <p>There are no assigned projects for this employee</p>
+<%end%>
+
+
+
+<p><%= link_to "Assign a project", new_employee_project_path(employee_id: @employee.id) %></p>
+<p><%= link_to "Back to the #{@division.name} page", division_path(id: @division.id) %></p>
+<p><%= link_to "Back to the home page", divisions_path %></p>

@@ -1,0 +1,10 @@
+<% if @projects.any? %>
+  Choose a project to assign to <%= @employee.name %>
+  <ul>
+    <% @projects.each do |project| %>
+      <li><%= link_to project.name, employee_projects_path(project_id: project.id, employee_id: @employee.id), method: :post %></li>
+    <% end %>
+  </ul>
+<%else %>
+  <p>There are no projects yet for this company</p>
+<%end%>

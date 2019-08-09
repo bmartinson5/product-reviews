@@ -1,0 +1,5 @@
+<h1>Create Employee for Division <%= @division.name %></h1>
+
+<%= render "layouts/division_employee_form" %>
+
+<p><%= link_to "Back to the #{@division.name} page", division_path(@division.id) %></p>
