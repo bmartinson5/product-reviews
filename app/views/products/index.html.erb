@@ -1,0 +1,21 @@
+<h1>Product Reviews</h1>
+
+
+<% if @products.any? %>
+  <h3>Company products:</h3>
+  <ul>
+    <% @products.each do |product| %>
+      <div>
+        <li>
+          <%=link_to product.name, product_path %><br>
+          <%= product.cost %><br>
+          <%= product.country_of_origin %><br>
+        </li>
+      </div>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No products created yet.</p>
+<% end %>
+
+<p><%= link_to "Create a product", new_product_path %></p>

@@ -10,30 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_07_210257) do
+ActiveRecord::Schema.define(version: 2019_08_09_233658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "divisions", force: :cascade do |t|
+  create_table "products", force: :cascade do |t|
     t.string "name"
+    t.float "cost"
+    t.string "country_of_origin"
   end
 
-  create_table "employee_projects", force: :cascade do |t|
-    t.bigint "employee_id"
-    t.bigint "project_id"
-    t.index ["employee_id"], name: "index_employee_projects_on_employee_id"
-    t.index ["project_id"], name: "index_employee_projects_on_project_id"
+  create_table "reviews", force: :cascade do |t|
+    t.string "author"
+    t.string "content_body"
+    t.integer "rating"
+    t.integer "product_id"
   end
 
-  create_table "employees", force: :cascade do |t|
-    t.string "name"
-    t.integer "division_id"
-  end
-
-  create_table "projects", force: :cascade do |t|
-    t.string "name"
-  end
-
-  add_foreign_key "employees", "divisions"
+  add_foreign_key "reviews", "products"
 end
