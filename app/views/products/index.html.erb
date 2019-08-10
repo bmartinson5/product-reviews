@@ -15,8 +15,12 @@
   <p>No products created yet.</p>
 <% end %>
 
-<% binding.pry %>
 
-<h3>Most Reviewed Product: <%=link_to @most_reviewed.name, product_path(id: @most_reviewed.id) %></h3>
+<h3>Most Reviewed Product:
+  <% @most_reviewed.each do |pro| %>
+    <% binding.pry%>
+    <%=link_to pro.name, product_path(id: pro.id) %></h3>
+  <% end %>
+
 
 <p><%= link_to "Create a product", new_product_path %></p>

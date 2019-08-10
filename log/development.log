@@ -2598,3 +2598,222 @@ Processing by ProductsController#index as HTML
   ↳ app/views/products/index.html.erb:18
   [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  select products from products inner join reviews on products.id = reviews.product_id group by products order by count(reviews.id) desc limit 1 FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
   ↳ app/views/products/index.html.erb:18
+Started GET "/" for ::1 at 2019-08-10 14:04:27 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  select products from products inner join reviews on products.id = reviews.product_id group by products order by count(reviews.id) desc limit 1 FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/benjaminmartinson/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered products/index.html.erb within layouts/application (155663.1ms)
+Completed 500 Internal Server Error in 155677ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Product::ActiveRecord_Relation:0x00007fd633afc3d0>
+Did you mean?  ids):
+    17: 
+    18: <% binding.pry %>
+    19: 
+    20: <h3>Most Reviewed Product: <%=link_to @most_reviewed.name, product_path(id: @most_reviewed.id) %></h3>
+    21: 
+    22: <p><%= link_to "Create a product", new_product_path %></p>
+  
+app/views/products/index.html.erb:20:in `_app_views_products_index_html_erb___363048217127971349_70278990613820'
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2019-08-10 14:07:23 -0700
+Started GET "/" for ::1 at 2019-08-10 14:08:07 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/benjaminmartinson/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `includes' for #<String:0x00007fbec5b77060>
+Did you mean?  include?):
+  
+app/models/product.rb:2:in `block in <class:Product>'
+app/controllers/products_controller.rb:4:in `index'
+Started GET "/" for ::1 at 2019-08-10 14:12:12 -0700
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `joins' for "products.name, count(reviews.id) as reviews_count":String):
+  
+app/models/product.rb:2:in `block in <class:Product>'
+app/controllers/products_controller.rb:4:in `index'
+Started GET "/" for ::1 at 2019-08-10 14:14:34 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /Users/benjaminmartinson/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (pry):5
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (pry):6
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /Users/benjaminmartinson/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /Users/benjaminmartinson/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered products/index.html.erb within layouts/application (124429.2ms)
+Completed 500 Internal Server Error in 124452ms (ActiveRecord: 7.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Product::ActiveRecord_Relation:0x00007fbec4adb2b0>
+Did you mean?  ids):
+    17: 
+    18: <% binding.pry %>
+    19: 
+    20: <h3>Most Reviewed Product: <%=link_to @most_reviewed.name, product_path(id: @most_reviewed.id) %></h3>
+    21: 
+    22: <p><%= link_to "Create a product", new_product_path %></p>
+  
+app/views/products/index.html.erb:20:in `_app_views_products_index_html_erb__1411139070099641359_70228660133180'
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2019-08-10 14:16:50 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Exists (26.0ms)[0m  [1m[34mSELECT  1 AS one FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (pry):10
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /Users/benjaminmartinson/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /Users/benjaminmartinson/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+Started GET "/" for ::1 at 2019-08-10 14:19:02 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:21
+  Rendered products/index.html.erb within layouts/application (13935.2ms)
+Completed 500 Internal Server Error in 13947ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (Association named 'product' was not found on Product; perhaps you misspelled it?):
+    18: 
+    19: <h3>Most Reviewed Product:
+    20:   <% @most_reviewed.each do |product| %>
+    21:     <%=link_to product.name, product_path(id: product.id) %></h3>
+    22:   <% end %>
+    23: 
+    24: 
+  
+app/views/products/index.html.erb:21:in `_app_views_products_index_html_erb__1411139070099641359_70228664038680'
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2019-08-10 14:19:54 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:20
+  Rendered products/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (Association named 'product' was not found on Product; perhaps you misspelled it?):
+    17: 
+    18: 
+    19: <h3>Most Reviewed Product:
+    20:   <% @most_reviewed.each do |product| %>
+    21:     <% binding.pry%>
+    22:     <%=link_to product.name, product_path(id: product.id) %></h3>
+    23:   <% end %>
+  
+app/views/products/index.html.erb:20:in `_app_views_products_index_html_erb__1411139070099641359_70228677362660'
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2019-08-10 14:22:38 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:20
+  Rendered products/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (Association named 'product' was not found on Product; perhaps you misspelled it?):
+    17: 
+    18: 
+    19: <h3>Most Reviewed Product:
+    20:   <% @most_reviewed.each do |pro| %>
+    21:     <% binding.pry%>
+    22:     <%=link_to pro.name, product_path(id: pro.id) %></h3>
+    23:   <% end %>
+  
+app/views/products/index.html.erb:20:in `_app_views_products_index_html_erb__1411139070099641359_70228660274480'
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2019-08-10 14:22:57 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:20
+  Rendered products/index.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (Association named 'product' was not found on Product; perhaps you misspelled it?):
+    17: 
+    18: 
+    19: <h3>Most Reviewed Product:
+    20:   <% @most_reviewed.each do |pro| %>
+    21:     <% binding.pry%>
+    22:     <%=link_to pro.name, product_path(id: pro.id) %></h3>
+    23:   <% end %>
+  
+app/views/products/index.html.erb:20:in `_app_views_products_index_html_erb__1411139070099641359_70228677581040'
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2019-08-10 14:24:06 -0700
+Started GET "/" for ::1 at 2019-08-10 14:24:43 -0700
+  [1m[35m (11.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/benjaminmartinson/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:20
+  Rendered products/index.html.erb within layouts/application (19133.2ms)
+Completed 200 OK in 19441ms (Views: 19398.7ms | ActiveRecord: 8.3ms)
+
+
