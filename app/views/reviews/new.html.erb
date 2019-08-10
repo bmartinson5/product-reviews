@@ -1,10 +1,10 @@
 <h2>Write a review for <%= @product.name %></h2>
-<%= form_for @review, :url => products_path do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br><br>
-  <%= f.label :cost %>
-  <%= f.text_field :cost %><br><br>
-  <%= f.label :country_of_origin %>
-  <%= f.text_field :country_of_origin %><br><br>
+<%= form_for @review, :url => product_reviews_path do |f| %>
+  <%= f.label :author %>
+  <%= f.text_field :author %><br><br>
+  <%= f.label :rating %>
+  <%= f.number_field :rating %><br><br>
+  <%= f.label :content_body %>
+  <%= f.text_area :content_body %><br><br>
   <%= f.submit %>
 <% end %>

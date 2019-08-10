@@ -9,9 +9,9 @@
     <% @product.reviews.each do |review| %>
       <div>
         <li>
-          <h4>Author of Review: <%= review.author %></h4><br>
-          <h4>Review Rating: <%= review.rating  %></h4><br>
-          <p>Feedback: <%=review.content_body  %></p><br>
+          <h4>Author of Review: <%= review.author %></h4>
+          <h4>Review Rating: <%= review.rating  %></h4>
+          <p>Feedback: <%=review.content_body  %></p>
         </li>
       </div>
     <% end %>
