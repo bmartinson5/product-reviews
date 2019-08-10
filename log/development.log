@@ -2446,3 +2446,155 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/" for ::1 at 2019-08-10 13:55:59 -0700
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/benjaminmartinson/Documents/product_reviews/app/models/product.rb:2: syntax error, unexpected ->, expecting end
+  scope :most_reviewed -> () {select products from pro...
+                       ^~
+/Users/benjaminmartinson/Documents/product_reviews/app/models/product.rb:2: syntax error, unexpected tIDENTIFIER, expecting '}'
+...s.id = reviews.product_id group by products order by count(r...
+...                          ^~~~~
+/Users/benjaminmartinson/Documents/product_reviews/app/models/product.rb:2: syntax error, unexpected tIDENTIFIER, expecting '}'
+...order by count(reviews.id) desc limit 1}
+...                           ^~~~):
+  
+app/models/product.rb:2: syntax error, unexpected ->, expecting end
+app/models/product.rb:2: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/models/product.rb:2: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/products_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2019-08-10 13:57:26 -0700
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/benjaminmartinson/Documents/product_reviews/app/models/product.rb:2: syntax error, unexpected ->, expecting end
+  scope :mostreviewed -> () {select products from pro...
+                      ^~
+/Users/benjaminmartinson/Documents/product_reviews/app/models/product.rb:2: syntax error, unexpected tIDENTIFIER, expecting '}'
+...s.id = reviews.product_id group by products order by count(r...
+...                          ^~~~~
+/Users/benjaminmartinson/Documents/product_reviews/app/models/product.rb:2: syntax error, unexpected tIDENTIFIER, expecting '}'
+...order by count(reviews.id) desc limit 1}
+...                           ^~~~):
+  
+app/models/product.rb:2: syntax error, unexpected ->, expecting end
+app/models/product.rb:2: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/models/product.rb:2: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/products_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2019-08-10 13:58:04 -0700
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/benjaminmartinson/Documents/product_reviews/app/models/product.rb:2: syntax error, unexpected tIDENTIFIER, expecting '}'
+...s.id = reviews.product_id group by products order by count(r...
+...                          ^~~~~
+/Users/benjaminmartinson/Documents/product_reviews/app/models/product.rb:2: syntax error, unexpected tIDENTIFIER, expecting '}'
+...order by count(reviews.id) desc limit 1}
+...                           ^~~~):
+  
+app/models/product.rb:2: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/models/product.rb:2: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/products_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2019-08-10 14:00:28 -0700
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `most_reviewed' for #<Class:0x00007fd633b96ac0>
+Did you mean?  mostreviewed):
+  
+app/controllers/products_controller.rb:4:in `index'
+Started GET "/" for ::1 at 2019-08-10 14:00:41 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  select products from products inner join reviews on products.id = reviews.product_id group by products order by count(reviews.id) desc limit 1 FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/benjaminmartinson/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered products/index.html.erb within layouts/application (16.7ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 6.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Product::ActiveRecord_Relation:0x00007fd630b48328>
+Did you mean?  ids):
+    15:   <p>No products created yet.</p>
+    16: <% end %>
+    17: 
+    18: <h3>Most Reviewed Product: <%=link_to @most_reviewed.name, product_path(id: @most_reviewed.id) %></h3>
+    19: 
+    20: <p><%= link_to "Create a product", new_product_path %></p>
+  
+app/views/products/index.html.erb:18:in `_app_views_products_index_html_erb___363048217127971349_70278958450760'
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2019-08-10 14:01:33 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  select products from products inner join reviews on products.id = reviews.product_id group by products order by count(reviews.id) desc limit 1 FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/benjaminmartinson/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered products/index.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Product::ActiveRecord_Relation:0x00007fd62ffeb278>
+Did you mean?  ids):
+    15:   <p>No products created yet.</p>
+    16: <% end %>
+    17: 
+    18: <h3>Most Reviewed Product: <%=link_to @most_reviewed.name, product_path(id: @most_reviewed.id) %></h3>
+    19: 
+    20: <p><%= link_to "Create a product", new_product_path %></p>
+  
+app/views/products/index.html.erb:18:in `_app_views_products_index_html_erb___363048217127971349_70278982694140'
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2019-08-10 14:01:39 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  select products from products inner join reviews on products.id = reviews.product_id group by products order by count(reviews.id) desc limit 1 FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/benjaminmartinson/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered products/index.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Product::ActiveRecord_Relation:0x00007fd63031b740>
+Did you mean?  ids):
+    15:   <p>No products created yet.</p>
+    16: <% end %>
+    17: 
+    18: <h3>Most Reviewed Product: <%=link_to @most_reviewed.name, product_path(id: @most_reviewed.id) %></h3>
+    19: 
+    20: <p><%= link_to "Create a product", new_product_path %></p>
+  
+app/views/products/index.html.erb:18:in `_app_views_products_index_html_erb___363048217127971349_70278954174600'
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2019-08-10 14:02:10 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT select products from products inner join reviews on products.id = reviews.product_id group by products order by count(reviews.id) desc limit 1 FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  select products from products inner join reviews on products.id = reviews.product_id group by products order by count(reviews.id) desc limit 1 FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/products/index.html.erb:18
