@@ -23,6 +23,16 @@ class ProductsController < ApplicationController
     render :show
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to products_path
+  end
+
+  def update
+
+  end
+
   private
     def product_params
       params.require(:product).permit(:name, :cost, :country_of_origin)

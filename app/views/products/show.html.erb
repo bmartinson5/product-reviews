@@ -20,5 +20,8 @@
   <p>No reviews created yet for this product.</p>
 <% end %>
 
+<%= button_to "Edit Product", { action: "update", id: @product.id }, method: :patch %>
+<%= button_to "Delete Product", { action: "destroy", id: @product.id }, method: :delete, data: { confirm: "Are you sure?" } %>
+
 <p><%= link_to "Add a Review", new_product_review_path(product_id: @product.id) %></p>
 <p><%= link_to "Back to the Products Page", products_path %></p>
