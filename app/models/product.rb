@@ -6,5 +6,9 @@ class Product < ApplicationRecord
     .limit(1)
   )}
 
+  scope :local_products, -> { where(country_of_origin: "USA")}
+
+  scope :recently_added, -> { order(id: :desc).limit(3)}
+
   has_many :reviews, :dependent => :delete_all
 end

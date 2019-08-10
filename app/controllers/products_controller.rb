@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @most_reviewed = Product.most_reviewed
+    @local_products = Product.local_products
+    @recently_added = Product.recently_added
     render :index
   end
 
