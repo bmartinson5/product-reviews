@@ -1,0 +1,24 @@
+<h2>Product Page for: <%= @product.name%></h2>
+
+<h4>Cost $<%= @product.cost %></h4>
+<h4>Country Origin: <%= @product.country_of_origin %></h4>
+
+<h3>Product Reviews</h3>
+<% if @product.reviews.any? %>
+  <ol>
+    <% @product.reviews.each do |review| %>
+      <div>
+        <li>
+          <h4>Author of Review: <%= review.author %></h4><br>
+          <h4>Review Rating: <%= review.rating  %></h4><br>
+          <p>Feedback: <%=review.content_body  %></p><br>
+        </li>
+      </div>
+    <% end %>
+  </ol>
+<% else %>
+  <p>No reviews created yet for this product.</p>
+<% end %>
+
+<p><%= link_to "Add a Review", new_product_review_path(product_id: @product.id) %></p>
+<p><%= link_to "Back to the Products Page", products_path %></p>

@@ -1,5 +1,5 @@
-<h2>Create a new Product</h2>
-<%= form_for @product, :url => products_path do |f| %>
+<h2>Write a review for <%= @product.name %></h2>
+<%= form_for @review, :url => products_path do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br><br>
   <%= f.label :cost %>
