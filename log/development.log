@@ -1721,3 +1721,728 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/products/4" for ::1 at 2019-08-10 12:46:51 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 137ms (Views: 123.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products" for ::1 at 2019-08-10 12:46:54 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/new" for ::1 at 2019-08-10 12:46:55 -0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-08-10 12:47:07 -0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vD+ZWnipSoA3HxdzSSzY2V9HDknlsGyVypo0gN4hnJ4Gjq+H7860dsezM74E8BFezolC7arNAYsV5dwQ4w2Mfw==", "product"=>{"name"=>"poptart", "cost"=>"3.55", "country_of_origin"=>"US"}, "commit"=>"Create Product"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:14
+  [1m[36mProduct Create (20.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "cost", "country_of_origin") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "poptart"], ["cost", 3.55], ["country_of_origin", "US"]]
+  ↳ app/controllers/products_controller.rb:14
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:14
+Redirected to http://localhost:3000/products
+Completed 302 Found in 47ms (ActiveRecord: 40.2ms)
+
+
+Started GET "/products" for ::1 at 2019-08-10 12:47:07 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/new" for ::1 at 2019-08-10 12:47:08 -0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-08-10 12:47:18 -0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iMNkfHzujjSyBDVQFdS+7UTtolctuOe5tNdaJj98BJ4yclKh64lwwkKoEZ1YCHdq1SPu82LFiqdrqLK2AlAUfw==", "product"=>{"name"=>"Ramrod", "cost"=>"5.6", "country_of_origin"=>"asdf"}, "commit"=>"Create Product"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:14
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "cost", "country_of_origin") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Ramrod"], ["cost", 5.6], ["country_of_origin", "asdf"]]
+  ↳ app/controllers/products_controller.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:14
+Redirected to http://localhost:3000/products
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/products" for ::1 at 2019-08-10 12:47:18 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 115ms (Views: 113.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/new" for ::1 at 2019-08-10 12:47:20 -0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-08-10 12:47:31 -0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qQT2wEwyKXrwRPAeZWxpzzi13B2KQ/XdBIFialz5/vYTtcAd21XXjADo1NMosKBIqXuQucU+mMPb/or6YdXuFw==", "product"=>{"name"=>"Please Bagel", "cost"=>"4.5", "country_of_origin"=>"USA"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:14
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "cost", "country_of_origin") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Please Bagel"], ["cost", 4.5], ["country_of_origin", "USA"]]
+  ↳ app/controllers/products_controller.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:14
+Redirected to http://localhost:3000/products
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/products" for ::1 at 2019-08-10 12:47:31 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/6" for ::1 at 2019-08-10 12:47:33 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 6], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/5" for ::1 at 2019-08-10 12:56:21 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 88ms (Views: 85.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products/5/reviews/new" for ::1 at 2019-08-10 12:56:22 -0700
+Started GET "/" for ::1 at 2019-08-10 12:57:07 -0700
+  [1m[35m (11.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/benjaminmartinson/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 352ms (Views: 314.9ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/products/6" for ::1 at 2019-08-10 12:57:10 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 6], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 65ms (Views: 49.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/products/6/reviews/new" for ::1 at 2019-08-10 12:57:12 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"product_id"=>"6"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (53.1ms)
+Completed 200 OK in 140ms (Views: 127.4ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/products/6/reviews" for ::1 at 2019-08-10 12:57:27 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C3H3oG3szYIIN092kERCjd11ToIYILU291HSjA1+Bo173mZbOpiC7BfR3NKjNoDZn5keoCFNxHNcxYkLYTBp3g==", "review"=>{"author"=>"jBen", "rating"=>"3333", "content_body"=>"sdfsdf"}, "commit"=>"Create Review", "product_id"=>"6"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[36mReview Create (15.7ms)[0m  [1m[32mINSERT INTO "reviews" ("author", "content_body", "rating", "product_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["author", "jBen"], ["content_body", "sdfsdf"], ["rating", 3333], ["product_id", 6]]
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:12
+Redirected to http://localhost:3000/products/6
+Completed 302 Found in 21ms (ActiveRecord: 16.8ms)
+
+
+Started GET "/products/6" for ::1 at 2019-08-10 12:57:27 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 6], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/views/products/show.html.erb:9
+  Rendered products/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/6/reviews/new" for ::1 at 2019-08-10 12:57:29 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"product_id"=>"6"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 22ms (Views: 19.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products/6/reviews" for ::1 at 2019-08-10 12:57:34 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T+pWhiVIyjanMCUcMAdZCuotg7F7OHS9m9/mSlH9NI0/Rcd9cjyFWLjWtrgDdZteqMHTk0JVBfgwS73NPbNb3g==", "review"=>{"author"=>"qweqwe", "rating"=>"3", "content_body"=>"sdfsadf"}, "commit"=>"Create Review", "product_id"=>"6"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("author", "content_body", "rating", "product_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["author", "qweqwe"], ["content_body", "sdfsadf"], ["rating", 3], ["product_id", 6]]
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:12
+Redirected to http://localhost:3000/products/6
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/products/6" for ::1 at 2019-08-10 12:57:34 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 6], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/views/products/show.html.erb:9
+  Rendered products/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products" for ::1 at 2019-08-10 12:57:36 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/products/5" for ::1 at 2019-08-10 12:57:38 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 22ms (Views: 18.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/products/5/reviews/new" for ::1 at 2019-08-10 12:57:40 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"product_id"=>"5"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/products/5/reviews" for ::1 at 2019-08-10 12:57:46 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WvkCGuksRXMCvI67wJucFqky4bHlM3+k3DL7yJ/TN6VwJBJknP4RBAIK4/rLU2LUEyLvj2qrG9JEG3Y1Np4Ztw==", "review"=>{"author"=>"werwer", "rating"=>"3", "content_body"=>"sdfgsdfgsdfgsdfgdsfgsdf"}, "commit"=>"Create Review", "product_id"=>"5"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("author", "content_body", "rating", "product_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["author", "werwer"], ["content_body", "sdfgsdfgsdfgsdfgdsfgsdf"], ["rating", 3], ["product_id", 5]]
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:12
+Redirected to http://localhost:3000/products/5
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/products/5" for ::1 at 2019-08-10 12:57:46 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/views/products/show.html.erb:9
+  Rendered products/show.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products/5/reviews/new" for ::1 at 2019-08-10 12:57:51 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"product_id"=>"5"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 20ms (Views: 17.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2019-08-10 12:57:55 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products/6" for ::1 at 2019-08-10 12:57:56 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 6], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/views/products/show.html.erb:9
+  Rendered products/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products" for ::1 at 2019-08-10 12:57:58 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/products/7" for ::1 at 2019-08-10 12:57:59 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 7], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/7/reviews/new" for ::1 at 2019-08-10 12:58:02 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"product_id"=>"7"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/products/7/reviews" for ::1 at 2019-08-10 12:58:10 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Trz2n85qi7qQoHNUHowXzzxWR81zKKYtFS6TwbkwETIyyou9UX0GWZ1d/3D2B6kjMkygE2Qc/V8APQwSetafA==", "review"=>{"author"=>"werqwe", "rating"=>"55", "content_body"=>"gsdf"}, "commit"=>"Create Review", "product_id"=>"7"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("author", "content_body", "rating", "product_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["author", "werqwe"], ["content_body", "gsdf"], ["rating", 55], ["product_id", 7]]
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:12
+Redirected to http://localhost:3000/products/7
+Completed 302 Found in 19ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/products/7" for ::1 at 2019-08-10 12:58:10 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 7], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/views/products/show.html.erb:9
+  Rendered products/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/7" for ::1 at 2019-08-10 13:07:28 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 7], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/views/products/show.html.erb:9
+  Rendered products/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 38ms (Views: 35.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products" for ::1 at 2019-08-10 13:07:30 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/5" for ::1 at 2019-08-10 13:07:31 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/views/products/show.html.erb:9
+  Rendered products/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/5/reviews/new" for ::1 at 2019-08-10 13:07:32 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"product_id"=>"5"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 21ms (Views: 17.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/products/5/reviews" for ::1 at 2019-08-10 13:07:36 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vEpVdMQfCUXfFKWsiURrdNMqdrQvt8OcbfjHFBstrhKWl0UKsc1dMt+iyO2CjJW2aTp4iqAvp+r10UrpsmCAAA==", "review"=>{"author"=>"asdfsadf", "rating"=>"23", "content_body"=>"asdfasf"}, "commit"=>"Create Review", "product_id"=>"5"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[36mReview Create (1.1ms)[0m  [1m[32mINSERT INTO "reviews" ("author", "content_body", "rating", "product_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["author", "asdfsadf"], ["content_body", "asdfasf"], ["rating", 23], ["product_id", 5]]
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:12
+Redirected to http://localhost:3000/products/5
+Completed 302 Found in 6ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/products/5" for ::1 at 2019-08-10 13:07:37 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/views/products/show.html.erb:9
+  Rendered products/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/5/reviews/new" for ::1 at 2019-08-10 13:11:39 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"product_id"=>"5"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 114ms (Views: 111.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/products/5/reviews" for ::1 at 2019-08-10 13:11:42 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"97/zwkRfu+HMH37+9aYwSiU1u362p7NBQdaGUx5B+DXdYuO8MY3vlsypE7/+bs6InyW1QDk/1zfZ/wuutwzWJw==", "review"=>{"author"=>"dfg", "rating"=>"4", "content_body"=>"sdfg"}, "commit"=>"Create Review", "product_id"=>"5"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("author", "content_body", "rating", "product_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["author", "dfg"], ["content_body", "sdfg"], ["rating", 4], ["product_id", 5]]
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:12
+Redirected to http://localhost:3000/products/5
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/products/5" for ::1 at 2019-08-10 13:11:42 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/views/products/show.html.erb:9
+  Rendered products/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/5" for ::1 at 2019-08-10 13:11:58 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/views/products/show.html.erb:9
+  Rendered products/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products" for ::1 at 2019-08-10 13:11:59 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products/4" for ::1 at 2019-08-10 13:12:02 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 22ms (Views: 18.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/4" for ::1 at 2019-08-10 13:12:05 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products/4/reviews/new" for ::1 at 2019-08-10 13:12:07 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"product_id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 21ms (Views: 17.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products/4/reviews" for ::1 at 2019-08-10 13:12:10 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zJARjNsp92mwTQ77xpRB6G305yItxV14KuNY9prIlyammo49CmqUMVRVH7hDv3xbEeL7dW1aJCrAMjtpZZv2wQ==", "review"=>{"author"=>"dfgdfg", "rating"=>"4", "content_body"=>"sdfg"}, "commit"=>"Create Review", "product_id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[36mReview Create (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("author", "content_body", "rating", "product_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["author", "dfgdfg"], ["content_body", "sdfg"], ["rating", 4], ["product_id", 4]]
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:12
+Redirected to http://localhost:3000/products/4
+Completed 302 Found in 19ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/products/4" for ::1 at 2019-08-10 13:12:10 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/views/products/show.html.erb:9
+  Rendered products/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/4/reviews/new" for ::1 at 2019-08-10 13:12:17 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"product_id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 22ms (Views: 19.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products/4/reviews" for ::1 at 2019-08-10 13:12:23 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KN4PbXbrxUDSgKVkF/i/R3M6T8m2C+bYkhBD2Ft1mYFC1JDcp6imGDaYtCeS04L0DyxTnvaUn4p4wSBHpCb4Zg==", "review"=>{"author"=>"dfg", "rating"=>"3344", "content_body"=>"asdfasdf"}, "commit"=>"Create Review", "product_id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("author", "content_body", "rating", "product_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["author", "dfg"], ["content_body", "asdfasdf"], ["rating", 3344], ["product_id", 4]]
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:12
+Redirected to http://localhost:3000/products/4
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/products/4" for ::1 at 2019-08-10 13:12:23 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/views/products/show.html.erb:9
+  Rendered products/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/4/reviews/new" for ::1 at 2019-08-10 13:12:25 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"product_id"=>"4"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/products/4/reviews" for ::1 at 2019-08-10 13:12:29 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dLTT8aCO7vt5UtKubrBjVxvZIDzXUpwSvwNnYi6LV14evkxAcc2No51Kw+3rm17kZ888a5fN5UBV0gT90dg2uQ==", "review"=>{"author"=>"asdfasd", "rating"=>"3", "content_body"=>"asdf"}, "commit"=>"Create Review", "product_id"=>"4"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("author", "content_body", "rating", "product_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["author", "asdfasd"], ["content_body", "asdf"], ["rating", 3], ["product_id", 4]]
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:12
+Redirected to http://localhost:3000/products/4
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/products/4" for ::1 at 2019-08-10 13:12:29 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/views/products/show.html.erb:9
+  Rendered products/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/4/reviews/new" for ::1 at 2019-08-10 13:12:30 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"product_id"=>"4"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/products/4/reviews" for ::1 at 2019-08-10 13:12:35 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7v9MnTPboB3h7npkXoL07KkE5JN+Ypp22/jME/RW/amE9dMs4pjDRQX2ayfbqclf1RL4xD794yQxKa+MCwWcTg==", "review"=>{"author"=>"3sdf", "rating"=>"33", "content_body"=>"sdfsdaf"}, "commit"=>"Create Review", "product_id"=>"4"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("author", "content_body", "rating", "product_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["author", "3sdf"], ["content_body", "sdfsdaf"], ["rating", 33], ["product_id", 4]]
+  ↳ app/controllers/reviews_controller.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:12
+Redirected to http://localhost:3000/products/4
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/products/4" for ::1 at 2019-08-10 13:12:35 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."product_id" = $1 LIMIT $2[0m  [["product_id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/views/products/show.html.erb:9
+  Rendered products/show.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 1.2ms)
+
+
