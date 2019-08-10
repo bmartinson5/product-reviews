@@ -3018,3 +3018,136 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 1.8ms)
 
 
+Started GET "/products" for ::1 at 2019-08-10 15:27:23 -0700
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/benjaminmartinson/Documents/product_reviews/app/models/product.rb:17: syntax error, unexpected '\n', expecting =>
+/Users/benjaminmartinson/Documents/product_reviews/app/models/product.rb:19: syntax error, unexpected '}', expecting end):
+  
+app/models/product.rb:17: syntax error, unexpected '\n', expecting =>
+app/models/product.rb:19: syntax error, unexpected '}', expecting end
+app/controllers/products_controller.rb:3:in `index'
+Started GET "/products" for ::1 at 2019-08-10 15:27:37 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:20
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/products/index.html.erb:25
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."country_of_origin" = $1[0m  [["country_of_origin", "USA"]]
+  ↳ app/views/products/index.html.erb:30
+  Rendered products/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 102ms (Views: 61.9ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/products/6" for ::1 at 2019-08-10 15:27:44 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:25
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/models/product.rb:17
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 28627ms (Views: 22.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/products/6" for ::1 at 2019-08-10 15:31:34 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:25
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/models/product.rb:17
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 21077ms (Views: 110.5ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/products" for ::1 at 2019-08-10 15:32:20 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:4
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:20
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/products/index.html.erb:25
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."country_of_origin" = $1[0m  [["country_of_origin", "USA"]]
+  ↳ app/views/products/index.html.erb:30
+  Rendered products/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 62ms (Views: 59.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/products/5" for ::1 at 2019-08-10 15:32:21 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:25
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/models/product.rb:17
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11081ms (Views: 56.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/7" for ::1 at 2019-08-10 15:32:48 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:25
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/models/product.rb:16
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 123ms (Views: 55.1ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/products/8" for ::1 at 2019-08-10 15:32:51 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:25
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/models/product.rb:16
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+ZeroDivisionError (divided by 0):
+  
+app/models/product.rb:17:in `/'
+app/models/product.rb:17:in `calc_avg_rating'
+app/controllers/products_controller.rb:26:in `show'
+Started GET "/products/8" for ::1 at 2019-08-10 15:33:38 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/benjaminmartinson/Documents/product_reviews/app/models/product.rb:21: syntax error, unexpected end-of-input, expecting end):
+  
+app/models/product.rb:21: syntax error, unexpected end-of-input, expecting end
+app/controllers/products_controller.rb:25:in `show'
+Started GET "/products/8" for ::1 at 2019-08-10 15:33:47 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:25
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/models/product.rb:16
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 166ms (Views: 105.6ms | ActiveRecord: 4.8ms)
+
+

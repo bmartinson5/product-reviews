@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @avg_rating = @product.calc_avg_rating();
     render :show
   end
 

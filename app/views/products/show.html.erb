@@ -4,6 +4,7 @@
 <h4>Country Origin: <%= @product.country_of_origin %></h4>
 
 <h3>Product Reviews</h3>
+<h5>Average Rating: <%= @avg_rating %></h5>
 <% if @product.reviews.any? %>
   <ol>
     <% @product.reviews.each do |review| %>
