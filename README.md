@@ -1,24 +1,38 @@
-# README
+# Product Reviews
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Author: Ben Martinson
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+This is a rails crud application that models a food specialty online store, where admins can manipulate products (full crud), and users can leave reviews.
 
-* System dependencies
+## Setup/Installation Requirements
 
-* Configuration
+* Clone the repository
+* Navigate to project directory using cd in terminal
+* Install ruby and rails globally (gem install rails inside root directory)
+* Use'bundle install' to load the Gems from the Gemfile
+* Start a postgres server in the background
+* Create the psql database from backup, with the following commands:
+    ```
+    createdb product_reviews_development
+    psql product_reviews_development < database_backup.sql
+    ```
+* To run the program, use 'rails start'
+* Open a web browser and navigate to the url: http://localhost:3000
 
-* Database creation
+## Support and contact details
 
-* Database initialization
+If you find a bug, run into any issues, please email benmartinson92@gmail.com
 
-* How to run the test suite
+## Technologies Used
 
-* Services (job queues, cache servers, search engines, etc.)
+* Ruby
+* RubyGems
+* Rails
+* Postgres
 
-* Deployment instructions
+### License
 
-* ...
+MIT License
+Copyright (c) 2019 Benjamin Martinson
