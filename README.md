@@ -15,8 +15,8 @@ This is a rails crud application that models a food specialty online store, wher
 * Start a postgres server in the background
 * Create the psql database from backup, with the following commands:
     ```
-    createdb product_reviews_development
-    psql product_reviews_development < database_backup.sql
+    createdb product_review_development
+    psql product_review_development < database_backup.sql
     ```
 * To run the program, use 'rails start'
 * Open a web browser and navigate to the url: http://localhost:3000
