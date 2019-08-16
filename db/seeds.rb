@@ -18,6 +18,6 @@ end
   product_id = Product.all.sample.id
   Review.create!(product_id: product_id,
     author: Faker::Name.name,
-    content_body: Faker::Lorem.sentence(word_count: 15, supplemental: false, random_words_to_add: 0),
+    content_body: Faker::Lorem.sentence(word_count: 40, supplemental: false, random_words_to_add: 0),
     rating: Faker::Number.between(from: 1, to: 5))
 end

@@ -19,6 +19,8 @@
       <h1>Marios Specialty Foods</h1>
     </div>
     <div class="content-body">
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
       <%= yield %>
     </div>
   </body>
