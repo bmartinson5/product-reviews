@@ -1,5 +1,9 @@
 class Review < ApplicationRecord
-  scope :filter_by, -> (author) { where("author like ?", "%#{author}%")}
+  def self.filter_by(author, rating)
+    scope = where("author like ?", "%#{author}%")
+    scope = scope.where(rating: rating) unless rating.blank?
+    scope
+  end
 
   belongs_to :product
   belongs_to :user

@@ -3,9 +3,10 @@ class ReviewsController < ApplicationController
   def index
     @reviews = nil
     @filter_review = Review.new
-    if(params.key?(:review) && params[:review].key?(:author))
+    if params.key?(:review)
       search_author = params[:review][:author]
-      @reviews = Review.filter_by(search_author)
+      search_rating = params[:review][:rating]
+      @reviews = Review.filter_by(search_author, search_rating)
     else
       @reviews = Review.all
     end

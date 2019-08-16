@@ -2,6 +2,8 @@
 <%= form_for(@filter_review, url: product_reviews_path, method: :get) do |f| %>
   <%= f.label :author %><br>
   <%= f.text_field :author%><br>
+  <%= f.label :rating %><br>
+  <%= f.select :rating, (1..5), { include_blank: true } %><br>
   <%= f.submit "Apply"%>
 <% end %>
 
@@ -21,5 +23,5 @@
     <% end %>
   </ol>
 <% else %>
-  <p>No reviews created yet.</p>
+  <p>No reviews.</p>
 <% end %>
