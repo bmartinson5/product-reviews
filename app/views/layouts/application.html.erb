@@ -26,10 +26,13 @@
           <li class="nav-item">
             <a class="nav-link" href="/products/new">Add Product</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/products/1/reviews">Browse Reviews</a>
+          </li>
         </ul>
       </div>
       <% if current_user %>
-      <a class="nav-link" href="/products/1/reviews">My Account</a> <pre>    </pre><%= link_to "Sign out", '/users/sign_out', method: :delete %>
+      <a class="nav-link" href="/user">My Account</a> <pre>    </pre><%= link_to "Sign out", '/users/sign_out', method: :delete %>
       <% else %>
       <%= link_to "Sign up", '/users/sign_up' %><pre>    </pre><%= link_to "Sign in", '/users/sign_in' %>
       <% end %>

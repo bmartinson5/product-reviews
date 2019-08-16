@@ -1,12 +1,14 @@
-<form class="" action="/divisions" method="get">
-    <input type="text" name="search_name" placeholder="Enter a name">
-    <button type="submit" name="button">Search Author</button>
-</form>
-
+<h2>User Account</h2>
+<br>
+<h4>email: <%= @user.email %></h4>
+<h4>Number of Reviews: <%= @user.reviews.length%></h4>
+<h4>Avg Rating: <%= @user.reviews.length%></h4>
+<br>
 <h3>Reviews</h3>
-<% if @reviews.any? %>
+
+<% if @user.reviews.any? %>
   <ol>
-    <% @reviews.each do |review| %>
+    <% @user.reviews.each do |review| %>
       <div>
         <li>
           <h4>Author of Review: <%= review.author %></h4>
@@ -17,5 +19,5 @@
     <% end %>
   </ol>
 <% else %>
-  <p>No reviews created yet.</p>
+  <p>You have no reviews yet.</p>
 <% end %>
