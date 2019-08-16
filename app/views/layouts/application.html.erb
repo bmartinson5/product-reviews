@@ -29,7 +29,7 @@
         </ul>
       </div>
       <% if current_user %>
-      <a class="nav-link" href="/user/<%= current_user.id %>"><%= current_user.email %></a> <pre>    </pre><%= link_to "Sign out", '/users/sign_out', method: :delete %>
+      <a class="nav-link" href="/products/1/reviews">My Account</a> <pre>    </pre><%= link_to "Sign out", '/users/sign_out', method: :delete %>
       <% else %>
       <%= link_to "Sign up", '/users/sign_up' %><pre>    </pre><%= link_to "Sign in", '/users/sign_in' %>
       <% end %>

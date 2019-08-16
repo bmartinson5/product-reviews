@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
 
   def index
     if current_user
+      @user = current_user
       @reviews = Review.where(user_id: current_user.id)
     end
     render :index

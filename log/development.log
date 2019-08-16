@@ -9583,3 +9583,274 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-08-16 11:24:58 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:22
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/products/index.html.erb:27
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."country_of_origin" = $1[0m  [["country_of_origin", "USA"]]
+  ↳ app/views/products/index.html.erb:32
+  Rendered products/index.html.erb within layouts/application (14.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+Completed 200 OK in 343ms (Views: 336.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/reviews" for ::1 at 2019-08-16 11:25:00 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/reviews"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-08-16 11:25:31 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:22
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/products/index.html.erb:27
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."country_of_origin" = $1[0m  [["country_of_origin", "USA"]]
+  ↳ app/views/products/index.html.erb:32
+  Rendered products/index.html.erb within layouts/application (11.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+Completed 200 OK in 59ms (Views: 55.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/products/1/reviews" for ::1 at 2019-08-16 11:25:32 -0700
+Processing by ReviewsController#index as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/index.html.erb:1
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/reviews/index.html.erb:3
+  Rendered reviews/index.html.erb within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Review:0x00007f8516013d88>):
+    2:   <ul>
+    3:     <% @reviews.each do |review| %>
+    4:       <div>
+    5:           <h4><%=link_to review.name, review_path(id: review.id) %></h4>
+    6:       </div>
+    7:     <% end %>
+    8:   </ul>
+  
+app/views/reviews/index.html.erb:5:in `block in _app_views_reviews_index_html_erb__1921288384922162103_70104745606860'
+app/views/reviews/index.html.erb:3:in `_app_views_reviews_index_html_erb__1921288384922162103_70104745606860'
+app/controllers/reviews_controller.rb:7:in `index'
+Started GET "/products/1/reviews" for ::1 at 2019-08-16 11:27:12 -0700
+Processing by ReviewsController#index as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/index.html.erb:1
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/reviews/index.html.erb:3
+  Rendered reviews/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 88ms (Views: 85.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2019-08-16 11:27:20 -0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  products.id, products.name, count(reviews.id) as reviews_count FROM "products" INNER JOIN "reviews" ON "reviews"."product_id" = "products"."id" GROUP BY products.id LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:22
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/products/index.html.erb:27
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."country_of_origin" = $1[0m  [["country_of_origin", "USA"]]
+  ↳ app/views/products/index.html.erb:32
+  Rendered products/index.html.erb within layouts/application (12.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+Completed 200 OK in 58ms (Views: 54.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/111" for ::1 at 2019-08-16 11:27:21 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"111"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 111], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:27
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 111]]
+  ↳ app/models/product.rb:22
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+Completed 200 OK in 54ms (Views: 49.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products/111/reviews/new" for ::1 at 2019-08-16 11:27:22 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"product_id"=>"111"}
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 111], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:12
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+Completed 200 OK in 78ms (Views: 74.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/products/111/reviews" for ::1 at 2019-08-16 11:27:31 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+OAtgcnNOjSB1io+5ndc3nYx5s+t/7TQo0Okn1jGUDhjiLu4c7mCvtBATGfdvZbtDa5mKD64YTk/p63fkidCnQ==", "review"=>{"author"=>"jBen", "rating"=>"3", "content_body"=>"<% if @product.reviews.any? %>\r\n  <ol>\r\n    <% @product.reviews.each do |review| %>\r\n      <div>\r\n        <li>\r\n          <h4>Author of Review: <%= review.author %></h4>\r\n          <h4>Review Rating: <%= review.rating  %></h4>\r\n          <p>Feedback: <%=review.content_body  %></p>\r\n        </li>\r\n      </div>\r\n    <% end %>\r\n  </ol>\r\n<% else %>\r\n  <p>No reviews created yet for this product.</p>\r\n<% end %>\r\n"}, "commit"=>"Create Review", "product_id"=>"111"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 111], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:19
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/reviews_controller.rb:22
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 10062ms (Views: 45.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/products/111/reviews" for ::1 at 2019-08-16 11:27:55 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3heS8AGvpabB7mQE9kZ+QvPgcDg/KwW/x1TE27Vvw6zv2A+ShEBDqXrp5MusGyY4yHjCEcswZE6UBIo6pJQzPg==", "review"=>{"author"=>"jBen", "rating"=>"3", "content_body"=>"asdfklasdflkjasdflkajsdflaskdjfsadlfkjasdflkajsdfalsdkfjasdlfkajsdflaksdjfasdf"}, "commit"=>"Create Review", "product_id"=>"111"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 111], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:19
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:22
+  [1m[36mReview Create (1.1ms)[0m  [1m[32mINSERT INTO "reviews" ("author", "content_body", "rating", "product_id", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author", "jBen"], ["content_body", "asdfklasdflkjasdflkajsdflaskdjfsadlfkjasdflkajsdfalsdkfjasdlfkajsdflaksdjfasdf"], ["rating", 3], ["product_id", 111], ["user_id", 1]]
+  ↳ app/controllers/reviews_controller.rb:22
+  [1m[35m (18.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:25
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/reviews_controller.rb:25
+Redirected to http://localhost:3000/products/111
+Completed 302 Found in 2679ms (ActiveRecord: 21.3ms)
+
+
+Started GET "/products/111" for ::1 at 2019-08-16 11:27:58 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"111"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 111], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:27
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 111]]
+  ↳ app/models/product.rb:22
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+Completed 200 OK in 47ms (Views: 43.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/111" for ::1 at 2019-08-16 11:28:32 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"111"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 111], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:27
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 111]]
+  ↳ app/models/product.rb:22
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+Completed 200 OK in 80ms (Views: 77.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/1/reviews" for ::1 at 2019-08-16 11:28:35 -0700
+Processing by ReviewsController#index as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/index.html.erb:1
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/reviews/index.html.erb:3
+  Rendered reviews/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 49ms (Views: 44.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products/1/reviews" for ::1 at 2019-08-16 11:33:16 -0700
+Processing by ReviewsController#index as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/index.html.erb within layouts/application
+  Rendered reviews/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    1: <h2>User Account</h2>
+    2: <br>
+    3: <h4>email: <%= @user.email %></h4>
+    4: <h4>Number of Reviews: <%= @user.reviews.length%></h4>
+    5: <h4>Avg Rating: <%= @user.reviews.length%></h4>
+    6: <br>
+  
+app/views/reviews/index.html.erb:3:in `_app_views_reviews_index_html_erb__1921288384922162103_70104794905200'
+app/controllers/reviews_controller.rb:7:in `index'
+Started GET "/products/1/reviews" for ::1 at 2019-08-16 11:33:35 -0700
+Processing by ReviewsController#index as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/reviews/index.html.erb:4
+  Rendered reviews/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 123ms (Views: 80.6ms | ActiveRecord: 14.2ms)
+
+
