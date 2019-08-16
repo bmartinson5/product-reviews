@@ -16,7 +16,6 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    byebug
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
     @review.user_id = current_user.id
