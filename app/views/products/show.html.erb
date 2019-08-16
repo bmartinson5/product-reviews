@@ -1,28 +1,42 @@
-<h2>Product Page for: <%= @product.name%></h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Product Page for: <%= @product.name%></h2>
 
-<h4>Cost $<%= @product.cost %></h4>
-<h4>Country Origin: <%= @product.country_of_origin %></h4>
+      <h4>Cost $<%= @product.cost %></h4>
+      <h4>Country Origin: <%= @product.country_of_origin %></h4>
 
-<h3>Product Reviews</h3>
-<h5>Average Rating: <%= @avg_rating %></h5>
-<% if @product.reviews.any? %>
-  <ol>
-    <% @product.reviews.each do |review| %>
-      <div>
-        <li>
-          <h4>Author of Review: <%= review.author %></h4>
-          <h4>Review Rating: <%= review.rating  %></h4>
-          <p>Feedback: <%=review.content_body  %></p>
-        </li>
-      </div>
-    <% end %>
-  </ol>
-<% else %>
-  <p>No reviews created yet for this product.</p>
-<% end %>
+      <h3>Product Reviews</h3>
+      <h5>Average Rating: <%= @avg_rating %></h5>
+    </div>
+    <div class="col-md-6">
+      <%= button_to "Edit Product", { action: "edit", id: @product.id }, method: :get %>
+      <%= button_to "Delete Product", { action: "destroy", id: @product.id }, method: :delete, data: { confirm: "Are you sure?" } %>
 
-<%= button_to "Edit Product", { action: "edit", id: @product.id }, method: :get %>
-<%= button_to "Delete Product", { action: "destroy", id: @product.id }, method: :delete, data: { confirm: "Are you sure?" } %>
+      <p><%= link_to "Add a Review", new_product_review_path(product_id: @product.id) %></p>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-5">
+      <% if @product.reviews.any? %>
+      <ol>
+        <% @product.reviews.each do |review| %>
+        <div>
+          <li>
+            <h4>Author of Review: <%= review.author %></h4>
+            <h4>Review Rating: <%= review.rating  %></h4>
+            <p>Feedback: <%=review.content_body  %></p>
+          </li>
+        </div>
+        <% end %>
+      </ol>
+      <% else %>
+      <p>No reviews created yet for this product.</p>
+      <% end %>
+    </div>
+    <div class="col-md-5">
+    </div>
+  </div>
 
-<p><%= link_to "Add a Review", new_product_review_path(product_id: @product.id) %></p>
-<p><%= link_to "Back to the Products Page", products_path %></p>
+</div>
