@@ -12,7 +12,8 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
       <a class="navbar-brand" href="#">Marios Specialty Foods</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,10 +29,10 @@
         </ul>
       </div>
       <% if current_user %>
-<%= current_user.email %> | <%= link_to "Sign out", '/users/sign_out', method: :delete %>
-<% else %>
-<%= link_to "Sign up", '/users/sign_up' %><pre>     </pre><%= link_to "Sign in", '/users/sign_in' %>
-<% end %>
+      <a class="nav-link" href="/user/<%= current_user.id %>"><%= current_user.email %></a> <pre>    </pre><%= link_to "Sign out", '/users/sign_out', method: :delete %>
+      <% else %>
+      <%= link_to "Sign up", '/users/sign_up' %><pre>    </pre><%= link_to "Sign in", '/users/sign_in' %>
+      <% end %>
     </nav>
     <div class="content-body">
       <%= flash[:alert] %>
