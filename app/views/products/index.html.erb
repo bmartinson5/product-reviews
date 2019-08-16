@@ -19,18 +19,30 @@
 
   <div class="col-md-5">
   <h3>Most Reviewed Product: </h3>
-    <% @most_reviewed.each do |pro| %>
-      <p><%=link_to pro.name, product_path(id: pro.id) %></p>
+    <% if @most_reviewed.any?%>
+      <% @most_reviewed.each do |pro| %>
+        <p><%=link_to pro.name, product_path(id: pro.id) %></p>
+      <% end %>
+    <% else %>
+      <p> There are no products reviewed yet</p>
     <% end %>
 
   <h3>Recently Added Products: </h3>
+    <% if @recently_added.any? %>
     <% @recently_added.each do |pro| %>
       <p><%=link_to pro.name, product_path(id: pro.id) %></p>
     <% end %>
+    <% else %>
+      <p> There are no products yet</p>
+    <% end %>
 
   <h3>Local Products (Made in USA): </h3>
+    <% if @local_products.any?%>
     <% @local_products.each do |pro| %>
       <p><%=link_to pro.name, product_path(id: pro.id) %></p>
+    <% end %>
+    <% else %>
+      <p> There are no local products yet</p>
     <% end %>
   </div>
 </div>
