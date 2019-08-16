@@ -1,7 +1,14 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.all
+    @reviews = nil
+    @filter_review = Review.new
+    if(params.key?(:review) && params[:review].key?(:author))
+      search_author = params[:review][:author]
+      @reviews = Review.filter_by(search_author)
+    else
+      @reviews = Review.all
+    end
     render :index
   end
 

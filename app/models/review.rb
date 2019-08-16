@@ -1,4 +1,6 @@
 class Review < ApplicationRecord
+  scope :filter_by, -> (author) { where("author like ?", "%#{author}%")}
+
   belongs_to :product
   belongs_to :user
 

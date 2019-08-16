@@ -1,7 +1,11 @@
-<form class="" action="/divisions" method="get">
-    <input type="text" name="search_name" placeholder="Enter a name">
-    <button type="submit" name="button">Search Author</button>
-</form>
+<h4>Filter By:</h4>
+<%= form_for(@filter_review, url: product_reviews_path, method: :get) do |f| %>
+  <%= f.label :author %><br>
+  <%= f.text_field :author%><br>
+  <%= f.submit "Apply"%>
+<% end %>
+
+<br>
 
 <h3>Reviews</h3>
 <% if @reviews.any? %>
