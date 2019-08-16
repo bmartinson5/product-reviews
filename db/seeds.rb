@@ -14,7 +14,7 @@ Product.destroy_all
     cost: Faker::Commerce.price(range: 0..20.00),
     country_of_origin: Faker::Address.country)
 end
-200.times do
+250.times do
   product_id = Product.all.sample.id
   Review.create!(product_id: product_id,
     author: Faker::Name.name,
