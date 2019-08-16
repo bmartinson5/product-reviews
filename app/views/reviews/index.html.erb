@@ -1,0 +1,11 @@
+<% if @reviews.any? %>
+  <ul>
+    <% @reviews.each do |review| %>
+      <div>
+          <h4><%=link_to review.name, review_path(id: review.id) %></h4>
+      </div>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No reviews created yet.</p>
+<% end %>
