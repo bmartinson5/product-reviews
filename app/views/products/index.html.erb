@@ -1,35 +1,40 @@
-<h2>Company Products</h2>
+<div class="container">
 
-
-<% if @products.any? %>
-  <ul>
-    <% @products.each do |product| %>
-      <div>
-        <li>
-          <h4><%=link_to product.name, product_path(id: product.id) %></h4>
-        </li>
-      </div>
+<div class="row">
+  <div class="col-md-5 products">
+    <h2>Company Products</h2>
+    <% if @products.any? %>
+      <ul>
+        <% @products.each do |product| %>
+          <div>
+              <h4><%=link_to product.name, product_path(id: product.id) %></h4>
+          </div>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No products created yet.</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>No products created yet.</p>
-<% end %>
+  </div>
 
 
-<h3>Most Reviewed Product:
-  <% @most_reviewed.each do |pro| %>
-    <%=link_to pro.name, product_path(id: pro.id) %></h3>
-  <% end %>
+  <div class="col-md-5">
+  <h3>Most Reviewed Product: </h3>
+    <% @most_reviewed.each do |pro| %>
+      <p><%=link_to pro.name, product_path(id: pro.id) %></p>
+    <% end %>
 
-<h3>Recently Added Products: </h3>
-  <% @recently_added.each do |pro| %>
-    <p><%=link_to pro.name, product_path(id: pro.id) %></p>
-  <% end %>
+  <h3>Recently Added Products: </h3>
+    <% @recently_added.each do |pro| %>
+      <p><%=link_to pro.name, product_path(id: pro.id) %></p>
+    <% end %>
 
-<h3>Local Products (Made in USA): </h3>
-  <% @local_products.each do |pro| %>
-    <p><%=link_to pro.name, product_path(id: pro.id) %></p>
-  <% end %>
+  <h3>Local Products (Made in USA): </h3>
+    <% @local_products.each do |pro| %>
+      <p><%=link_to pro.name, product_path(id: pro.id) %></p>
+    <% end %>
+  </div>
+</div>
 
 <br>
-<p><h4><%= link_to "Create a product", new_product_path %></h4></p>
+
+</div>
