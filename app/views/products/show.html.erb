@@ -13,7 +13,11 @@
       <%= button_to "Edit Product", { action: "edit", id: @product.id }, method: :get %>
       <%= button_to "Delete Product", { action: "destroy", id: @product.id }, method: :delete, data: { confirm: "Are you sure?" } %>
 
-      <p><%= link_to "Add a Review", new_product_review_path(product_id: @product.id) %></p>
+      <% if current_user %>
+        <p><%= link_to "Add a Review", new_product_review_path(product_id: @product.id) %></p>
+      <% else %>
+        <p><%= link_to "Sign in to add a Review", '/users/sign_in' %></p>
+      <% end %>
     </div>
   </div>
   <br>

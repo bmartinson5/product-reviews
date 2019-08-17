@@ -37,7 +37,6 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    binding.pry
     render :edit
   end
 
